@@ -1,0 +1,48 @@
+{
+    "libros": [
+        {
+            "titulo": "EN AGOSTO NOS VEMOS",
+            "autor": "GABRIEL GARCIA MARQUEZ",
+            "idiomas": ["español", "ingles", "frances"],
+            "editorial": "Random House",
+            "num_paginas": 144,
+            "anyo_edicion": 2024,
+            "precio": 18.90,
+            "comentarios": [
+                "Es un libro que nos permite ver la humanidad del autor",
+                "Excelente",
+                "No pasará a la historia por ser la mejor obra de García Márquez"
+            ]
+
+        },
+        {
+            "titulo": "LA GRIETA DEL SILENCIO",
+            "autor": "JAVIER CASTILLO",
+            "idiomas": ["español", "ingles"],
+            "editorial": "SUMA",
+            "num_paginas": 448,
+            "anyo_edicion": 2024,
+            "precio": 20.80,                
+            "comentarios": [
+                "Te engancha desde la primera hasta la última página",
+                "Me ha encantadote",
+                "Da pena haber acabado el libro"
+            ]
+
+        },
+        {
+            "titulo": "ESNOB",
+            "autor": "ELISABET BENAVENT",
+            "idiomas": ["español", "ingles", "aleman"],
+            "editorial": "Nuevo",
+            "num_paginas": 688,
+            "anyo_edicion": 2024,
+            "precio": 22.70,
+            "comentarios": [
+                "Muy emotivo",
+                "Lectura diferente y sorprendente",
+                "Tenía quizá altas expectativas, y no se cumplieron"
+            ]
+        }
+    ]
+}

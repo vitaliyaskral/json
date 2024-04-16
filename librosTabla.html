@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,th, tr {
+            border: 2px solid blue;
+            border-collapse: collapse;
+        }
+    </style>
+
+</head>
+<body>
+    <button id = "cargaLibros">Carga libros</button>
+    <div id = "contenedorTabla"></div>
+
+    <script>
+       
+    document.getElementById( "cargaLibros").addEventListener("click", cargaLibros);  
+
+    function cargaLibros(){   
+    
+        fetch('./lista_libros.json')
+            .then(function(response) {
+                if (!response.ok) {
+                throw new Error('No se pudo cargar el archivo JSON.');
+                }
+                return response.json(); // Convertimos la respuesta a JSON
+            })
+            .then(function(data) {
+                // La variable "data" ahora contiene el objeto JavaScript
+                //console.log(data);
+                // Puedes acceder a las propiedades del objeto, por ejemplo:
+                // Aqu铆 puedes realizar cualquier operaci贸n que necesites con los datos del archivo JSON
+
+                let tabla = document.createElement("table");
+
+                let filaSup = document.createElement("tr");
+
+                let cTitulo = document.createElement("th");
+                cTitulo.innerHTML = "Titulo";
+                let cAutor = document.createElement("th")
+                cAutor.innerHTML = "Autor";
+                let cEditorial = document.createElement("th");
+                cEditorial.innerHTML = "Editorial";
+                let cNumPaginas = document.createElement("th");
+                cNumPaginas.innerHTML = "Numero paginas";
+                let cAnyoEdicion = document.createElement("th");
+                cAnyoEdicion.innerHTML = "Año edicion";                
+                let cPrecio = document.createElement("th");
+                cPrecio.innerHTML = "Precio"; 
+
+                filaSup.appendChild(cTitulo);
+                filaSup.appendChild(cAutor);
+                filaSup.appendChild(cEditorial);
+                filaSup.appendChild(cNumPaginas);
+                filaSup.appendChild(cAnyoEdicion);
+                filaSup.appendChild(cPrecio);
+                tabla.appendChild(filaSup);
+
+                for(objeto of data.libros){
+                let fila = document.createElement("tr");
+
+                let celdaTitulo = document.createElement("td");
+                celdaTitulo.innerHTML = objeto.titulo;
+                let celdaAutor = document.createElement("td")
+                celdaAutor.innerHTML = objeto.autor;
+                let celdaEditorial = document.createElement("td");
+                celdaEditorial.innerHTML = objeto.editorial;
+                let celdaNumPaginas = document.createElement("td");
+                celdaNumPaginas.innerHTML = objeto.num_paginas;
+                let celdaAnyoEdicion = document.createElement("td");
+                celdaAnyoEdicion.innerHTML = objeto.anyo_edicion;                
+                let celdaPrecio = document.createElement("td");
+                celdaPrecio.innerHTML = objeto.precio; 
+
+                    fila.appendChild(celdaTitulo);
+                    fila.appendChild(celdaAutor);
+                    fila.appendChild(celdaEditorial);
+                    fila.appendChild(celdaTitulo);
+                    fila.appendChild(celdaNumPaginas);
+                    fila.appendChild(celdaAnyoEdicion);
+                    fila.appendChild(celdaPrecio);
+                    tabla.appendChild(fila);
+                }
+
+                let contenedorTabla = document.getElementById("contenedorTabla");
+                contenedorTabla.appendChild(tabla);
+
+            })
+            .catch(function(error) {
+                console.error('Se produjo un error al cargar el archivo JSON:', error);
+            });
+        }
+    </script>
+</body>
+</html>
