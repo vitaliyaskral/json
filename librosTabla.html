@@ -65,25 +65,27 @@
 
                 let celdaTitulo = document.createElement("td");
                 celdaTitulo.innerHTML = objeto.titulo;
+
                 let celdaAutor = document.createElement("td")
                 celdaAutor.innerHTML = objeto.autor;
+
                 let celdaEditorial = document.createElement("td");
                 celdaEditorial.innerHTML = objeto.editorial;
+                 
                 let celdaNumPaginas = document.createElement("td");
                 celdaNumPaginas.innerHTML = objeto.num_paginas;
+                
                 let celdaAnyoEdicion = document.createElement("td");
                 celdaAnyoEdicion.innerHTML = objeto.anyo_edicion;                
                 let celdaPrecio = document.createElement("td");
                 celdaPrecio.innerHTML = objeto.precio; 
-
-                    fila.appendChild(celdaTitulo);
-                    fila.appendChild(celdaAutor);
-                    fila.appendChild(celdaEditorial);
-                    fila.appendChild(celdaTitulo);
-                    fila.appendChild(celdaNumPaginas);
-                    fila.appendChild(celdaAnyoEdicion);
-                    fila.appendChild(celdaPrecio);
-                    tabla.appendChild(fila);
+                fila.appendChild(celdaTitulo);                  
+                fila.appendChild(celdaAutor);
+                fila.appendChild(celdaEditorial);
+                fila.appendChild(celdaNumPaginas);
+                fila.appendChild(celdaAnyoEdicion);
+                fila.appendChild(celdaPrecio);
+                tabla.appendChild(fila);
                 }
 
                 let contenedorTabla = document.getElementById("contenedorTabla");
